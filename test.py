@@ -17,4 +17,10 @@ bool('0') # False
 int("False") # Fehlermeldung weil String zu Int
 float("True") # Fehlermeldung weil String zu Float
 
-type
+mehrzeiliger_text = """
+Dies ist ein Beispiel für einen mehrzeiligen String in Python.
+Du kannst hier beliebig viele Zeilen schreiben.
+Sogar mit Zeilenumbrüchen!
+"""
+
+print(mehrzeiliger_text)
