@@ -17,18 +17,13 @@ bool('0') # False
 int("False") # Fehlermeldung weil String zu Int
 float("True") # Fehlermeldung weil String zu Float
 
-def quadrat(zahl):
-    """Berechnet das Quadrat einer Zahl.
-
-    Args:
-        zahl: Die Zahl, deren Quadrat berechnet werden soll.
-
-    Returns:
-        Das Quadrat der gegebenen Zahl.
+print(
     """
-
-    return zahl * zahl
-
-# Aufruf der Funktion und Ausgabe des Ergebnisses
-ergebnis = quadrat(5)
-print(ergebnis)  # Ausgabe: 25
+    _____    __________________ .___.___  ___________            __   
+    /  _  \  /   _____/\_   ___ \|   |   | \_   _____/___   _____/  |_ 
+    /  /_\  \ \_____  \ /    \  \/|   |   |  |    __)/  _ \ /    \   __\
+    /    |    \/        \\     \___|   |   |  |     \(  <_> )   |  \  |  
+    \____|__  /_______  / \______  /___|___|  \___  / \____/|___|  /__|  
+            \/        \/         \/               \/             \/      
+    """
+)
