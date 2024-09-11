@@ -1,21 +1,22 @@
-def longest_common_substring(str1, str2):
-    m = len(str1)
-    n = len(str2)
-    max_len = 0
-    ending_index = m
-    table = [[0] * (n + 1) for i in range(m + 1)]
-    
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
-            if str1[i - 1] == str2[j - 1]:
-                table[i][j] = table[i - 1][j - 1] + 1
-                if table[i][j] > max_len:
-                    max_len = table[i][j]
-                    ending_index = i
-    
-    return str1[ending_index - max_len: ending_index]
+def count_vowels_consonants(s):
+    vowels = "aeiou"
+    s = s.lower()
+    vowel_count = sum(1 for char in s if char in vowels)
+    consonant_count = sum(1 for char in s if char.isalpha() and char not in vowels)
+    return vowel_count, consonant_count
 
-print(longest_common_substring("substringfinder", "stringfindertest"))
+print(count_vowels_consonants("Hello World"))
 
-name = "Florian"
-print(name[:]) # Florian
+
+
+a = "Buchhaltung"
+b = "Python ist toll!"
+
+print(a[5])
+print(b[-1])
+print(a[:4])
+print(b[11:16])
+print(a[-100:100])
+print(a[-5])
+print(a[-12])
+print(a[4:8])
