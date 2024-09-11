@@ -1,8 +1,13 @@
-name = "Florian"
+from itertools import permutations
 
-print(name[-2]) # a
+def all_permutations(s):
+    return [''.join(p) for p in permutations(s)]
 
-def reverse_string(s):
-    return s[::-1]
+print(all_permutations("abc"))
 
-print(reverse_string("Advanced Strings"))
+
+
+n = len("Florian")
+print(n) # 7
+print("Florian"[n - 2]) # a
+
