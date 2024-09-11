@@ -12,11 +12,11 @@ print(count_vowels_consonants("Hello World"))
 a = "Buchhaltung"
 b = "Python ist toll!"
 
-print(a[5])
-print(b[-1])
-print(a[:4])
-print(b[11:16])
-print(a[-100:100])
-print(a[-5])
-print(a[-12])
-print(a[4:8])
+print(a[5]) # a
+print(b[-1]) # !
+print(a[:4]) # Buch
+print(b[11:16]) # toll!
+print(a[-100:100]) # Buchhaltung
+print(a[-5]) # l
+print(a[-12]) # Fehler
+print(a[4:8]) # halt
