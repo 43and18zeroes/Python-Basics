@@ -1,22 +1,22 @@
-def count_vowels_consonants(s):
-    vowels = "aeiou"
-    s = s.lower()
-    vowel_count = sum(1 for char in s if char in vowels)
-    consonant_count = sum(1 for char in s if char.isalpha() and char not in vowels)
-    return vowel_count, consonant_count
+def string_compression(s):
+    compressed = []
+    count = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+        else:
+            compressed.append(s[i - 1] + str(count))
+            count = 1
+    compressed.append(s[-1] + str(count))  # Add last character
+    return ''.join(compressed)
 
-print(count_vowels_consonants("Hello World"))
+print(string_compression("aaabbccddddeee"))
 
 
 
-a = "Buchhaltung"
-b = "Python ist toll!"
+a = "Hallo"
+b = " "
+c = "Python"
+d = "!"
 
-print(a[5]) # a
-print(b[-1]) # !
-print(a[:4]) # Buch
-print(b[11:16]) # toll!
-print(a[-100:100]) # Buchhaltung
-print(a[-5]) # l
-print(a[-12]) # Fehler
-print(a[4:8]) # halt
+print(d * 3) # !!!
