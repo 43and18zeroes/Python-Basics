@@ -15,5 +15,8 @@ print("Florian".lower()) # florian
 print("florian".capitalize()) # Florian
 print("florian".isupper()) # False
 print("florian".islower()) # True
+print("1234".isnumeric()) # True
+print("florian".isalpha()) # True
+print("Florian;Pamela;Mia;Tokage".split(';')) # ['Florian', 'Pamela', 'Mia', 'Tokage']
 
 
