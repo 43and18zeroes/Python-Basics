@@ -6,29 +6,5 @@ def are_anagrams(s1, s2):
 print(are_anagrams("listen", "silent"))
 
 
-print(30 / 15) # 2.0 Float Division
-
-print(30 // 15) # 2.0 Integer Division
-
-print(7 // 2) # 3 Alles nach dem Komma wird abgeschnitten
-
-print(7 // 8) # 0 Alles nach dem Komma wird abgeschnitten
-
-print(42 % 12) # 6
-
-print(5 % 4) # 1
-
-print(2**5) # 32
-
-
-
-
-
-
-
-
-
-
-
-
-
+result = 2 ** 2.0
+print(result)
