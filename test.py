@@ -35,3 +35,20 @@ print("Florian\nPamela\nMia\nTokage") # Florian
 # Tokage
 
 print("Florian\nPamela\nMia\nTokage".splitlines()) # ['Florian', 'Pamela', 'Mia', 'Tokage']
+
+print("Florian\nPamela\nMia\nTokage".split("\n")) # ['Florian', 'Pamela', 'Mia', 'Tokage']
+
+print("   Florian   ".strip()) # Florian (like trim() in JS)
+
+print("   Florian   D   ".replace(" ", "")) # FlorianD
+
+print("   Florian   D   ".replace("o", ".")) #    Fl.rian   D
+
+print("Florian D".replace("Florian", "Pamela")) # Pamela D
+
+print("Florian".replace("ia", "uo")) # Floruon
+
+print("Wasserfall".count("s")) # 2
+
+print("Wasserfall".index("a")) # 1
+
