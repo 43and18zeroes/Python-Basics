@@ -52,3 +52,19 @@ print("Wasserfall".count("s")) # 2
 
 print("Wasserfall".index("a")) # 1
 
+# Substring
+print("Wasserfall".index("fall")) # 6
+
+print("Wasserfall".find("fall")) # 6
+
+print("Wasserfall".find("o")) # -1 (nicht vorhanden)
+
+print("Wasserfall".find("o")) # -1 (nicht vorhanden)
+
+# keyword in (keine Methode)
+print("a" in "Wasserfall") # True
+
+
+
+
+
