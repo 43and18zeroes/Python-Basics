@@ -1,9 +1,8 @@
-from collections import Counter
+def modular_exponentiation(base, exp, mod):
+    return (base ** exp) % mod
 
-def are_anagrams(s1, s2):
-    return Counter(s1) == Counter(s2)
-
-print(are_anagrams("listen", "silent"))
+# Example
+modular_exponentiation(2, 10, 5)  # 1024 % 5 = 4
 
 
 result = 2 ** 2.0
