@@ -1,9 +1,7 @@
-def modular_exponentiation(base, exp, mod):
-    return (base ** exp) % mod
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
 
 # Example
-modular_exponentiation(2, 10, 5)  # 1024 % 5 = 4
-
-
-result = 2 ** 2.0
-print(result)
+gcd(48, 18)  # Output: 6
