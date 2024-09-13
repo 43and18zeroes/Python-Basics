@@ -1,29 +1,5 @@
-i = 0
-i += 1
-print(i) # 1
+def lcm(a, b):
+    return abs(a * b) // gcd(a, b)
 
-i -= 1
-print(i) # 0
-
-i = 5
-i /= 2
-print(i) # 2.5
-
-i = 5
-i //= 2
-print(i) # 2
-
-a = 5
-a **= 2
-print(a) # 25
-
-b = 10
-b %= 3
-print(b) # 1
-
-
-
-
-
-
-
+# Example
+lcm(12, 18)  # Output: 36
