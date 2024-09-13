@@ -1,13 +1,8 @@
-import cmath
-
-def solve_quadratic(a, b, c):
-    discriminant = cmath.sqrt(b**2 - 4*a*c)
-    root1 = (-b + discriminant) / (2 * a)
-    root2 = (-b - discriminant) / (2 * a)
-    return root1, root2
+def harmonic_mean(numbers):
+    return len(numbers) / sum(1 / num for num in numbers)
 
 # Example
-solve_quadratic(1, -3, 2)  # Output: (2.0, 1.0)
+harmonic_mean([1, 2, 4])  # Output: 1.7142857142857142
 
 
 print(2 < 3 and 3 == 5) # False
@@ -20,9 +15,9 @@ print(True or 2 < 3 and False) # True (< als erstes, dann and weil Python)
 
 print(True and 2 < 3 and False) # False
 
+print(not (2 < 3)) # False
 
+print(1 ^ False) # 1
 
-
-
-
+print(2 - 2 ^ False) # 0
 
