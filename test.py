@@ -5,19 +5,22 @@ def harmonic_mean(numbers):
 harmonic_mean([1, 2, 4])  # Output: 1.7142857142857142
 
 
-print(2 < 3 and 3 == 5) # False
 
-print(2 < 3 or 3 == 5) # True
+print(True and False and True or False) # False
 
-print((2 < 3) ^ (3 != 5)) # False (weil XOR)
+print(not False or not True) # True (erst die nots, dann das or)
 
-print(True or 2 < 3 and False) # True (< als erstes, dann and weil Python)
+print(True and (False or not False)) # True
 
-print(True and 2 < 3 and False) # False
+print(not (not False ^ True or not False)) # False, erst die nots, dann XOR, dann or, dann Klammer
 
-print(not (2 < 3)) # False
+print(True and False ^ True and False) # False
 
-print(1 ^ False) # 1
 
-print(2 - 2 ^ False) # 0
+
+
+
+
+
+
 
