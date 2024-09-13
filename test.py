@@ -1,15 +1,10 @@
-def prime_factors(n):
-    factors = []
-    i = 2
-    while i * i <= n:
-        if n % i:
-            i += 1
-        else:
-            n //= i
-            factors.append(i)
-    if n > 1:
-        factors.append(n)
-    return factors
+import cmath
+
+def solve_quadratic(a, b, c):
+    discriminant = cmath.sqrt(b**2 - 4*a*c)
+    root1 = (-b + discriminant) / (2 * a)
+    root2 = (-b - discriminant) / (2 * a)
+    return root1, root2
 
 # Example
-prime_factors(100)  # Output: [2, 2, 5, 5]
+solve_quadratic(1, -3, 2)  # Output: (2.0, 1.0)
