@@ -22,3 +22,8 @@ def addieren2(a, b):
 ergebnis = addieren2(1, 4)
 print(ergebnis) # 5, ein Integer
 print(type(ergebnis)) # <class 'int'>
+
+def addieren3(*summanden):
+    print(type(summanden)) # <class 'tuple'>
+    
+addieren3()
