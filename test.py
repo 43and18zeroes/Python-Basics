@@ -1,2 +1,4 @@
-gerade = [0, 2, 4, 6, 8, 10]
-print(gerade[0:3]) # [0, 2, 4]
+zahlen = [5, 2, 7, 4, 1]
+zahlen.sort(reverse=True)
+
+print(zahlen) # [7, 5, 4, 2, 1]
