@@ -1,16 +1,11 @@
-tupel = (2, 3, 7, 4, 7)
+set_var = {12, 28, 38, True, 29, "Florian"}
+print(set_var) # {'Florian', True, 29, 38, 12, 28} Sets haben keine feste Reihenfolge
 
-n = tupel.count(7)
-print(n) # 2
+set_var2 = {1, 2, 1}
+print(set_var2) # {1, 2} Es wird kein Fehler geworfen, das Duplikat wird einfach nicht berücksichtigt
 
-print(tupel.index(3)) # 1
+set_var3 = {1, 2, 3}
+print(len(set_var3)) # 3
 
-kopie = tupel.copy()
-print(kopie) # [8, 3, 8]
-
-print(list(tupel)) # [2, 3, 7, 4, 7], Casting
-
-liste = list(tupel)
-liste.sort()
-print(liste) # [2, 3, 4, 7, 7]
-
+set_var4 = {1, 2, 1}
+print(len(set_var4)) # 2 Duplikate werden nicht mitgezählt
