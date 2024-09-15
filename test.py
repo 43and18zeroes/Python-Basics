@@ -1,4 +1,5 @@
-zahlen = [5, 2, 7, 4, 1]
-zahlen.sort(reverse=True)
+zahlen = [8, 3, 4, "Junus", True, 8, 9, "Nam", 1, 2, 7, 0, "Flo"]
 
-print(zahlen) # [7, 5, 4, 2, 1]
+zahlen.remove(True)
+
+print(zahlen) # [8, 3, 4, 'Junus', 8, 9, 'Nam', 1, 2, 7, 0, 'Flo']
