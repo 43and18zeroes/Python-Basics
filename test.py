@@ -1,5 +1,5 @@
-zahlen = [8, 3, 4, "Junus", True, 8, 9, "Nam", 1, 2, 7, 0, "Flo"]
+zahlen = [8, 3, 8]
+kopie = zahlen
+zahlen.clear()
 
-zahlen.remove(True)
-
-print(zahlen) # [8, 3, 4, 'Junus', 8, 9, 'Nam', 1, 2, 7, 0, 'Flo']
+print(kopie) # []
