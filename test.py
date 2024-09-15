@@ -1,29 +1,16 @@
-print(()) # (), leeres Tupel
+tupel = (2, 3, 7, 4, 7)
 
-test_tupel = (1, 2, 3)
-print(test_tupel[1]) # 2
-print(test_tupel[-2]) # 2
-print(test_tupel[-3]) # 1
+n = tupel.count(7)
+print(n) # 2
 
+print(tupel.index(3)) # 1
 
-def addieren(a, b):
-    summe = a + b
-    return a, b, summe
+kopie = tupel.copy()
+print(kopie) # [8, 3, 8]
 
-ergebnis = addieren(1, 4)
-print(ergebnis) # (1, 4, 5), ein Tupel
-print(type(ergebnis)) # <class 'tuple'>
+print(list(tupel)) # [2, 3, 7, 4, 7], Casting
 
+liste = list(tupel)
+liste.sort()
+print(liste) # [2, 3, 4, 7, 7]
 
-def addieren2(a, b):
-    summe = a + b
-    return summe
-
-ergebnis = addieren2(1, 4)
-print(ergebnis) # 5, ein Integer
-print(type(ergebnis)) # <class 'int'>
-
-def addieren3(*summanden):
-    print(type(summanden)) # <class 'tuple'>
-    
-addieren3()
