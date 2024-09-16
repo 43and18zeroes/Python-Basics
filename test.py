@@ -1,6 +1,6 @@
-name = "Florian"
+def addieren(a, b):
+    summe = a + b
+    return summe
 
-def sag_hallo(name):
-    pass
-
-sag_hallo(name)
+s = addieren(10, 32)
+print(f"Summe: {s}") # Summe: 42
