@@ -1,11 +1,5 @@
-telefonbuch = {
-    "Junus" : "0123456789"
+passwort_hashes = {
+    "abc123" : "e4u57913dfkgjst8kj45h234jkh2",
+    "1337" : "e4u57913dfkgjst8kj45h234jkh2",
+    "love" : "e4u57913dfkgjst8kj45h234jkh2"
 }
-
-print(telefonbuch.get("Junus")) # 0123456789
-
-print(telefonbuch["Junus"]) # 0123456789
-
-print(telefonbuch["Florian"]) # KeyError
-
-print(telefonbuch.get("Florian")) # None (kein Error)
