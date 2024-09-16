@@ -1,15 +1,11 @@
-zahlen = {1, 4, 6, 8}
+telefonbuch = {
+    "Junus" : "0123456789"
+}
 
-zahlen.add(-1) # {1, 4, 6, 8, -1}
-print(zahlen)
+print(telefonbuch.get("Junus")) # 0123456789
 
-zahlen.remove(1)
-print(zahlen) # {4, 6, 8, -1}
+print(telefonbuch["Junus"]) # 0123456789
 
-kopie = zahlen.copy() # {8, 4, 6, -1}
-print(kopie)
+print(telefonbuch["Florian"]) # KeyError
 
-print(list(zahlen)) # [4, 6, 8, -1]
-
-zahlen.clear()
-print(zahlen) # set()
+print(telefonbuch.get("Florian")) # None (kein Error)
