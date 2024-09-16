@@ -1,4 +1,9 @@
-def kwargs_test(**test):
-    print(test)
+name = "Florian"
 
-kwargs_test({"the_key" : "the_value"})
+
+def sag_hallo(name):
+    print(name)
+    print("!!!")
+
+
+sag_hallo(name)
