@@ -9,3 +9,6 @@ print(len(set_var3)) # 3
 
 set_var4 = {1, 2, 1}
 print(len(set_var4)) # 2 Duplikate werden nicht mitgezählt
+
+liste = [42, "Florian", True]
+print(len(liste))
