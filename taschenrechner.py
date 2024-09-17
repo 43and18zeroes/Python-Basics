@@ -9,3 +9,5 @@ def multiplizieren(a, b):
 
 def dividieren(a, b):
     return a / b
+
+print(__name__) # __main__

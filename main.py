@@ -1,8 +1,14 @@
-import taschenrechner as tr
+from taschenrechner import *
 
-import numpy as np
-import pandas as pd
-
-summe = tr.addieren(1, 2)
+summe = addieren(1, 2)
 
 print(summe)
+
+print(__name__) # __main__
+
+def begruessung():
+    print("Hallo aus dem Modul!")
+
+if __name__ == "__main__":
+    print("Das Skript wird direkt ausgeführt.")
+    begruessung()
