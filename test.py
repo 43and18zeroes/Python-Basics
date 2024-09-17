@@ -1,4 +1,6 @@
-def kwargs_test(**test):
-    print(test) # {'a': 1, 'b': 2, 'c': 3} (ein Dictionary)
+def teilnehmer(**daten):
+    vorname = daten.get("vorname")
+    nachname = daten.get("nachname")
+    print(f"{vorname} {nachname}") # Florian Dalwigk
     
-kwargs_test(a=1, b=2, c=3)
+teilnehmer(vorname="Florian", nachname="Dalwigk")
