@@ -1,4 +1,6 @@
-def daten_erfassen(id, vorname, nachname, *daten_args, **daten_kwargs):
-    pass
+level = 0
 
-daten_erfassen(42, "Florian", "Dalwigk", 1, 2, 3, email="info@info.de")
+def level_up():
+    print(f"Dein Level ist: {level}")
+    
+level_up()
