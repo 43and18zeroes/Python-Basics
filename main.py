@@ -1,11 +1,8 @@
-def addieren(a, b):
-    return a + b
+import taschenrechner as tr
 
-def subtrahieren(a, b):
-    return a - b
+import numpy as np
+import pandas as pd
 
-def multiplizieren(a, b):
-    return a * b
+summe = tr.addieren(1, 2)
 
-def dividieren(a, b):
-    return a / b
+print(summe)
