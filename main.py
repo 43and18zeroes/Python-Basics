@@ -4,6 +4,9 @@ class Hund:
         self.rasse = rasse
         self.name = name
         
+    def vorstellen(self):
+        print(self.name)
+        
     def essen(self):
         pass
     
@@ -13,4 +16,8 @@ class Hund:
     def laufen(self):
         pass
     
-dog1 = Hund()
+dog1 = Hund('Braun', 'Schäferhund', 'Fritzi')
+dog2 = Hund('Schwarz', 'Schäferhund', 'Wuffi')
+
+dog1.vorstellen() # Fritzi
+dog2.vorstellen() # Wuffi
