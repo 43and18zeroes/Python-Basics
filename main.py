@@ -1,29 +1,12 @@
-class Mammal:
-    def __init__(self, farbe, rasse, name):
-        self.farbe = farbe
-        self.rasse = rasse
-        self.name = name
+class Pokemon:
+    
+    def __init__(self, n, level):
+        self.n = n
+        self.level = level
         
     def vorstellen(self):
-        print(self.name)
+        print(f"{self.n}, {self.n}!")
         
-    def essen(self):
-        pass
-    
-    def laufen(self):
-        pass
-
-class Hund(Mammal):
-    def bellen(self):
-        pass
-    
-class Katze(Mammal):
-    def miauen(self):
-        print("Miau")
-
-    
-dog1 = Hund('Braun', 'Schäferhund', 'Fritzi')
-dog2 = Hund('Schwarz', 'Schäferhund', 'Wuffi')
-
-dog1.vorstellen() # Fritzi
-dog2.vorstellen() # Wuffi
+if __name__ == "__main__":
+    bisasam = Pokemon("Bisasam", 0)
+    bisasam.vorstellen() # Bisasam, Bisasam!
