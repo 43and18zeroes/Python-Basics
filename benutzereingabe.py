@@ -1,5 +1,5 @@
-jahr = int(input("In welchen Jahr wurdest du geboren?\n"))
+import base64
 
-alter = 2024 - jahr
+cmd = "bmFtZSA9IGlucHV0KCdHaWIgZGVpbmVuIE5hbWVuIGVpbjogJyk7cHJpbnQoZidIYWxsbyB7bmFtZX0p"
 
-print(f"Du bist {alter} Jahre alt.")
+exec(base64.b16decode.cmd)

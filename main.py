@@ -1,14 +1,16 @@
-from taschenrechner import *
-
-summe = addieren(1, 2)
-
-print(summe)
-
-print(__name__) # __main__
-
-def begruessung():
-    print("Hallo aus dem Modul!")
-
-if __name__ == "__main__":
-    print("Das Skript wird direkt ausgeführt.")
-    begruessung()
+class Hund:
+    def __init__(self, farbe, rasse, name):
+        self.farbe = farbe
+        self.rasse = rasse
+        self.name = name
+        
+    def essen(self):
+        pass
+    
+    def bellen(self):
+        pass
+    
+    def laufen(self):
+        pass
+    
+dog1 = Hund()
