@@ -5,6 +5,13 @@ class Pokemon:
         self.__lebenspunkte = 42
         self.__level = 1
         
+    # Magische Methode
+    def __str__(self):
+        return f"Name: {self.__n}\nLebenspunkte: {self.__lebenspunkte}\nLevel: {self.__level}"
+    
+    def __gt__(self, other):
+        return self.__level > other.__level
+        
     def vorstellen(self):
         print(f"{self.__n}, {self.__n}!")
         
@@ -25,5 +32,8 @@ if __name__ == "__main__":
     p1 = Pokemon("Pikachu")
     p2 = Pokemon("Bisasam")
     
-    p1.attackieren(p2, 10)
-    print(p2.zeige_lebenspunkte()) # 32
+    p1.entwickeln()
+    
+    print(p1 > p2) # True
+    
+    str(p1)
