@@ -1,4 +1,4 @@
-class Hund:
+class Mammal:
     def __init__(self, farbe, rasse, name):
         self.farbe = farbe
         self.rasse = rasse
@@ -10,11 +10,17 @@ class Hund:
     def essen(self):
         pass
     
+    def laufen(self):
+        pass
+
+class Hund(Mammal):
     def bellen(self):
         pass
     
-    def laufen(self):
-        pass
+class Katze(Mammal):
+    def miauen(self):
+        print("Miau")
+
     
 dog1 = Hund('Braun', 'Schäferhund', 'Fritzi')
 dog2 = Hund('Schwarz', 'Schäferhund', 'Wuffi')
