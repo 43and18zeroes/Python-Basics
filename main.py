@@ -7,3 +7,12 @@ except Exception:
     print("Es ist ein Fehler aufgetreten.")
 finally:
     print("Ich werde in jedem Fall ausgeführt")
+    
+    
+try:
+    f = open("text.txt", "w")
+    f.write("Hallo Welt")
+except Exception:
+    pass
+finally:
+    f.close()
