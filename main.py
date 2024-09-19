@@ -5,3 +5,5 @@ try:
     print(liste[index])
 except IndexError as ex:
     print(f"Der Zugriff ist fehlgeschlagen.\n{ex}")
+except ValueError as ex:
+    print(f"Bitte gib eine Zahl ein.\n{ex}")
