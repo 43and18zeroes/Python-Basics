@@ -4,4 +4,4 @@ try:
     index = int(input("Bitte gib einen Index ein: "))
     print(liste[index])
 except IndexError as ex:
-    print(ex)
+    print(f"Der Zugriff ist fehlgeschlagen.\n{ex}")
