@@ -1,10 +1,7 @@
-class MeineKlasse:
-    def __init__(self, x):
-        if x <= 0:
-            raise ValueError("Wert muss größer als Null sein.")
-        self.x = x
-
 try:
-    objekt = MeineKlasse(-2)
-except ValueError as e:
-    print(e)
+    zahl = int(input("Gib eine Zahl ein: "))
+    print(10 / zahl)
+except ValueError:
+    print("Bitte gib eine ganze Zahl ein.")
+except ZeroDivisionError:
+    print("Division durch Null ist nicht erlaubt.")
