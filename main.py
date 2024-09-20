@@ -1,7 +1,10 @@
+class MeineKlasse:
+    def __init__(self, x):
+        if x <= 0:
+            raise ValueError("Wert muss größer als Null sein.")
+        self.x = x
+
 try:
-    liste = [1, 2, 3]
-    element = liste[3]
-except IndexError:
-    print("Index außerhalb des Bereichs.")
-else:
-    print("Element gefunden:", element)
+    objekt = MeineKlasse(-2)
+except ValueError as e:
+    print(e)
