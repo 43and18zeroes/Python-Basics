@@ -1,13 +1,7 @@
-import asyncio
+class Meta(type):
+    def __new__(mcs, name, bases, attrs):
+        print(f"Erstelle Klasse: {name}")
+        return super().__new__(mcs, name, bases, attrs)
 
-async def greet(name):
-    print(f"Hallo, {name}!")
-    await asyncio.sleep(1)
-    print("Fertig!")
-
-async def main():
-    task1 = asyncio.create_task(greet("Welt"))
-    task2 = asyncio.create_task(greet("Python"))
-    await asyncio.gather(task1, task2)
-
-asyncio.run(main())
+class MyClass(metaclass=Meta):
+    pass
