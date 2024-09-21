@@ -1,3 +1,7 @@
-numbers = [1, 2, 3, 4, 5]
-squared = list(map(lambda x: x**2, numbers))
-print(squared)  # Ausgabe: [1, 4, 9, 16, 25]
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Ausgabe: 120
