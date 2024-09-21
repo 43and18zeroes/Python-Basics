@@ -1,5 +1,16 @@
-def my_function(*args, **kwargs):
-    print(args)  # Tuple aller positional arguments
-    print(kwargs)  # Dictionary aller keyword arguments
+class Person:
+    def __init__(self, age):
+        self._age = age
 
-my_function(1, 2, 3, a=4, b=5)
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Alter muss positiv sein")
+        self._age = value
+
+person = Person(30)
+print(person.age)  # Ausgabe: 30
