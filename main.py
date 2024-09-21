@@ -1,15 +1,5 @@
-class OpenFile:
-    def __init__(self, filename, mode):
-        self.filename = filename
-        self.mode = mode
-        self.file = None
+def my_function(*args, **kwargs):
+    print(args)  # Tuple aller positional arguments
+    print(kwargs)  # Dictionary aller keyword arguments
 
-    def __enter__(self):
-        self.file = open(self.filename, self.mode)
-        return self.file
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.file.close()
-
-with OpenFile('my_file.txt', 'w') as f:
-    f.write('Hello, world!')
+my_function(1, 2, 3, a=4, b=5)
