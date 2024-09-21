@@ -1,7 +1,13 @@
-def sicheres_teilen(a, b):
-    try:
-        return a / b
-    except ZeroDivisionError:
-        return "Division durch Null"
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Vor Ausführung der Funktion")
+        result = func(*args, **kwargs)
+        print("Nach Ausführung der Funktion")
+        return result
+    return wrapper
 
-print(sicheres_teilen(10, 0))
+@my_decorator
+def greet(name):
+    print(f"Hallo, {name}!")
+
+greet("Welt")
