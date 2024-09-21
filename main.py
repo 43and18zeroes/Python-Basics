@@ -1,7 +1,3 @@
-class Meta(type):
-    def __new__(mcs, name, bases, attrs):
-        print(f"Erstelle Klasse: {name}")
-        return super().__new__(mcs, name, bases, attrs)
-
-class MyClass(metaclass=Meta):
-    pass
+numbers = [1, 2, 3, 4, 5]
+even_squares = [x**2 for x in numbers if x % 2 == 0]
+print(even_squares)  # Ausgabe: [4, 16]
