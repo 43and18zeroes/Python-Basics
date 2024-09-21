@@ -1,16 +1,13 @@
-class Person:
-    def __init__(self, age):
-        self._age = age
+import asyncio
 
-    @property
-    def age(self):
-        return self._age
+async def greet(name):
+    print(f"Hallo, {name}!")
+    await asyncio.sleep(1)
+    print("Fertig!")
 
-    @age.setter
-    def age(self, value):
-        if value < 0:
-            raise ValueError("Alter muss positiv sein")
-        self._age = value
+async def main():
+    task1 = asyncio.create_task(greet("Welt"))
+    task2 = asyncio.create_task(greet("Python"))
+    await asyncio.gather(task1, task2)
 
-person = Person(30)
-print(person.age)  # Ausgabe: 30
+asyncio.run(main())
