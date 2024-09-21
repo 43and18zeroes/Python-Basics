@@ -1,2 +1,3 @@
-squares = (x**2 for x in range(10))
-print(next(squares))  # Ausgabe: 0
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Ausgabe: [1, 4, 9, 16, 25]
