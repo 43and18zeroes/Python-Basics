@@ -1,7 +1,15 @@
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+class OpenFile:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
 
-print(factorial(5))  # Ausgabe: 120
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+with OpenFile('my_file.txt', 'w') as f:
+    f.write('Hello, world!')
