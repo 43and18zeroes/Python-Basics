@@ -1,11 +1,8 @@
-import requests
-import time
-
-def make_request_with_timeout(url, timeout=5):
+def safe_int_conversion(value):
     try:
-        response = requests.get(url, timeout=timeout)
-        return response.text
-    except requests.exceptions.Timeout:
-        print("Request timed out.")
-    except requests.exceptions.RequestException as e:
-        print(f"Network error: {e}")
+        result = int(value)
+        return result
+    except ValueError:
+        print("Invalid input: Could not convert to integer.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
