@@ -1,10 +1,11 @@
-def divide_integers(x, y):
+def read_file_safely(filename):
     try:
-        result = x / y
-    except ZeroDivisionError as e:
-        raise ValueError("Cannot divide by zero.") from e
-
-try:
-    result = divide_integers(10, 0)
-except Exception as e:
-    print(e)
+        with open(filename, 'r') as f:
+            content = f.read()
+        return content
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+    except PermissionError:
+        print(f"Permission denied to access '{filename}'.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
