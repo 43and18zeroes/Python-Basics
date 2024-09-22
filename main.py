@@ -1,7 +1,7 @@
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+def sicheres_teilen(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Division durch Null"
 
-print(factorial(5))  # Ausgabe: 120
+print(sicheres_teilen(10, 0))
