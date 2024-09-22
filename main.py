@@ -1,8 +1,13 @@
-def safe_int_conversion(value):
+import sqlite3
+
+def execute_query_safely(query, params=None):
     try:
-        result = int(value)
-        return result
-    except ValueError:
-        print("Invalid input: Could not convert to integer.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        conn = sqlite3.connect('my_database.db')
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"Database error: {e}")
+    finally:
+        if conn:
+            conn.close()
