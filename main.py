@@ -1,11 +1,8 @@
-def read_file_safely(filename):
+def safe_division(x, y):
     try:
-        with open(filename, 'r') as f:
-            content = f.read()
-        return content
-    except FileNotFoundError:
-        print(f"File '{filename}' not found.")
-    except PermissionError:
-        print(f"Permission denied to access '{filename}'.")
+        result = x / y
+        return result
+    except ZeroDivisionError:
+        print("Cannot divide by zero.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
