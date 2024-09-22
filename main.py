@@ -1,8 +1,10 @@
-from contextlib import suppress
+def divide_integers(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError as e:
+        raise ValueError("Cannot divide by zero.") from e
 
-def ignore_file_not_found(filename):
-    with suppress(FileNotFoundError):
-        with open(filename, 'r') as f:
-            content = f.read()
-            return content
-    return None
+try:
+    result = divide_integers(10, 0)
+except Exception as e:
+    print(e)
