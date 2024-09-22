@@ -1,13 +1,13 @@
-import sqlite3
+class InvalidInputError(Exception):
+    pass
 
-def execute_query_safely(query, params=None):
-    try:
-        conn = sqlite3.connect('my_database.db')
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        conn.commit()
-    except sqlite3.Error as e:
-        print(f"Database error: {e}")
-    finally:
-        if conn:
-            conn.close()
+def validate_input(value):
+    if not value.isdigit():
+        raise InvalidInputError("Input must be a digit.")
+
+try:
+    input_value = input("Enter a digit: ")
+    validate_input(input_value)
+    print("Input is valid.")
+except InvalidInputError as e:
+    print(e)
