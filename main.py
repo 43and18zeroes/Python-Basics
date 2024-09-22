@@ -1,13 +1,8 @@
-class FileExistsError(Exception):
-    def __init__(self, filename):
-        super().__init__(f"File '{filename}' already exists.")
-        self.filename = filename
+from contextlib import suppress
 
-def create_file_safely(filename):
-    try:
-        with open(filename, 'w') as f:
-            pass
-    except FileExistsError as e:
-        print(e)
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+def ignore_file_not_found(filename):
+    with suppress(FileNotFoundError):
+        with open(filename, 'r') as f:
+            content = f.read()
+            return content
+    return None
