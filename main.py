@@ -1,15 +1,11 @@
-def safe_division(x, y):
+import requests
+import time
+
+def make_request_with_timeout(url, timeout=5):
     try:
-        result = x / y
-        return result
-    except ZeroDivisionError:
-        print("Cannot divide by zero.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")def safe_division(x, y):
-    try:
-        result = x / y
-        return result
-    except ZeroDivisionError:
-        print("Cannot divide by zero.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        response = requests.get(url, timeout=timeout)
+        return response.text
+    except requests.exceptions.Timeout:
+        print("Request timed out.")
+    except requests.exceptions.RequestException as e:
+        print(f"Network error: {e}")
