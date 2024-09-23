@@ -1,13 +1,11 @@
-class FileExistsError(Exception):
-    def __init__(self, filename):
-        super().__init__(f"File '{filename}' already exists.")
-        self.filename = filename
-
-def create_file_safely(filename):
+def read_file_safely(filename):
     try:
-        with open(filename, 'w') as f:
-            pass
-    except FileExistsError as e:
-        print(e)
+        with open(filename, 'r') as f:
+            content = f.read()
+        return content
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+    except PermissionError:
+        print(f"Permission denied to access '{filename}'.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
