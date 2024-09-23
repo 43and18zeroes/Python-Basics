@@ -1,11 +1,13 @@
-import requests
-import time
+import sqlite3
 
-def make_request_with_timeout(url, timeout=5):
+def execute_query_safely(query, params=None):
     try:
-        response = requests.get(url, timeout=timeout)
-        return response.text
-    except requests.exceptions.Timeout:
-        print("Request timed out.")
-    except requests.exceptions.RequestException as e:
-        print(f"Network error: {e}")
+        conn = sqlite3.connect('my_database.db')
+        cursor = conn.cursor()
+        cursor.execute(query, params)
+        conn.commit()
+    except sqlite3.Error as e:
+        print(f"Database error: {e}")
+    finally:
+        if conn:
+            conn.close()
