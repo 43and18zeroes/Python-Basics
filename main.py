@@ -1,13 +1,13 @@
-import sqlite3
+class FileExistsError(Exception):
+    def __init__(self, filename):
+        super().__init__(f"File '{filename}' already exists.")
+        self.filename = filename
 
-def execute_query_safely(query, params=None):
+def create_file_safely(filename):
     try:
-        conn = sqlite3.connect('my_database.db')
-        cursor = conn.cursor()
-        cursor.execute(query, params)
-        conn.commit()
-    except sqlite3.Error as e:
-        print(f"Database error: {e}")
-    finally:
-        if conn:
-            conn.close()
+        with open(filename, 'w') as f:
+            pass
+    except FileExistsError as e:
+        print(e)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
