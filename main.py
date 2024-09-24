@@ -1,13 +1,13 @@
-class FileExistsError(Exception):
-    def __init__(self, filename):
-        super().__init__(f"File '{filename}' already exists.")
-        self.filename = filename
+class InvalidInputError(Exception):
+    pass
 
-def create_file_safely(filename):
-    try:
-        with open(filename, 'w') as f:
-            pass
-    except FileExistsError as e:
-        print(e)
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+def validate_input(value):
+    if not value.isdigit():
+        raise InvalidInputError("Input must be a digit.")
+
+try:
+    input_value = input("Enter a digit: ")
+    validate_input(input_value)
+    print("Input is valid.")
+except InvalidInputError as e:
+    print(e)
