@@ -1,12 +1,13 @@
-def check_age(age):
-    if age < 0:
-        raise ValueError("Age cannot be negative.")
-    elif age > 120:
-        raise ValueError("Age seems unrealistic.")
+class FileExistsError(Exception):
+    def __init__(self, filename):
+        super().__init__(f"File '{filename}' already exists.")
+        self.filename = filename
 
-try:
-    age = int(input("Enter your age: "))
-    check_age(age)
-    print("Age is valid.")
-except ValueError as e:
-    print(e)
+def create_file_safely(filename):
+    try:
+        with open(filename, 'w') as f:
+            pass
+    except FileExistsError as e:
+        print(e)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
