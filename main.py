@@ -1,13 +1,12 @@
-class InvalidInputError(Exception):
-    pass
-
-def validate_input(value):
-    if not value.isdigit():
-        raise InvalidInputError("Input must be a digit.")
+def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    elif age > 120:
+        raise ValueError("Age seems unrealistic.")
 
 try:
-    input_value = input("Enter a digit: ")
-    validate_input(input_value)
-    print("Input is valid.")
-except InvalidInputError as e:
+    age = int(input("Enter your age: "))
+    check_age(age)
+    print("Age is valid.")
+except ValueError as e:
     print(e)
