@@ -1,21 +1,9 @@
-import pygame
+import pandas as pd
 
-pygame.init()
+# Erstellen eines DataFrames
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Alter': [25, 30, 28]}
+df = pd.DataFrame(data)
 
-# Fenster erstellen
-screen = pygame.display.set_mode((800, 600))
-
-# Spielschleife
-running = True
-while running:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      running = False
-
-  # Hintergrundfarbe
-  screen.fill((255, 255, 255))
-
-  # Aktualisieren des Fensters
-  pygame.display.flip()
-
-pygame.quit()
+# Daten anzeigen
+print(df)
