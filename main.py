@@ -1,10 +1,21 @@
-from flask import Flask, render_template
+import pygame
 
-app = Flask(__name__)
+pygame.init()
 
-@app.route('/')
-def index():
-  return render_template('index.html')
+# Fenster erstellen
+screen = pygame.display.set_mode((800, 600))
 
-if __name__ == '__main__':
-  app.run(debug=True)
+# Spielschleife
+running = True
+while running:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      running = False
+
+  # Hintergrundfarbe
+  screen.fill((255, 255, 255))
+
+  # Aktualisieren des Fensters
+  pygame.display.flip()
+
+pygame.quit()
