@@ -1,12 +1,10 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from flask import Flask, render_template
 
-# Verbindung zur Datenbank herstellen
-engine = create_engine('sqlite:///mydatabase.db')
-Session = sessionmaker(bind=engine)
-session = Session()
+app = Flask(__name__)
 
-# Beispiel: Abfrage von Daten
-users = session.query(User).all()
-for user in users:
-  print(user.name, user.email)
+@app.route('/')
+def index():
+  return render_template('index.html')
+
+if __name__ == '__main__':
+  app.run(debug=True)
