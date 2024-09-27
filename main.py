@@ -1,20 +1,21 @@
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
-# Laden des Iris-Datensatzes
-iris = load_iris()
-X = iris.data
-y = iris.target
+def analyze_text(text):
+  # Tokenisierung
+  words = word_tokenize(text)
+  
+  # Entfernung von Stopwords
+  stop_words = set(stopwords.words('english'))
+  filtered_words = [word for word in words if word not in stop_words]
+  
+  # Häufigkeitsverteilung
+  word_freq = nltk.FreqDist(filtered_words)
+  
+  # Ausgabe der häufigsten 10 Wörter
+  print(word_freq.most_common(10))
 
-# Aufteilung in Trainings- und Testdaten
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
-# Erstellen und Trainieren eines KNN-Modells
-knn = KNeighborsClassifier(n_neighbors=3)
-knn.fit(X_train, y_train)
-
-# Vorhersage für neue Daten
-new_data = [[3, 5, 4, 2]]
-predicted = knn.predict(new_data)
-print(predicted)
+# Beispieltext
+text = "This is a sample text for natural language processing. We can use NLTK to analyze it."
+analyze_text(text)
