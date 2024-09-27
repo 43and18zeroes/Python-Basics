@@ -1,11 +1,12 @@
-class Dog:
-  def __init__(self, name, breed):
-    self.name = name
-    self.breed = breed
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
-  def bark(self):
-    print("Woof!")
+# Verbindung zur Datenbank herstellen
+engine = create_engine('sqlite:///mydatabase.db')
+Session = sessionmaker(bind=engine)
+session = Session()
 
-# Erstellen eines Objekts
-my_dog = Dog("Buddy", "Golden Retriever")
-my_dog.bark()
+# Beispiel: Abfrage von Daten
+users = session.query(User).all()
+for user in users:
+  print(user.name, user.email)
