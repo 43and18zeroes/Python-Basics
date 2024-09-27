@@ -1,15 +1,12 @@
-from bs4 import BeautifulSoup
-import requests
+def count_words_in_file(filename):
+  word_count = 0
+  with open(filename, 'r') as file:
+    for line in file:
+      words = line.split()
+      word_count += len(words)
+  return word_count
 
-def scrape_website(url):
-  response = requests.get(url)
-  soup = BeautifulSoup(response.content, 'html.parser')
-  
-  # Beispiel: Alle Überschriften extrahieren
-  headings = soup.find_all('h2')
-  for heading in headings:
-    print(heading.text)
-
-# Beispiel-URL
-url = "https://www.example.com"
-scrape_website(url)
+# Beispiel-Datei
+filename = "my_text_file.txt"
+total_words = count_words_in_file(filename)
+print("Anzahl der Wörter:", total_words)
