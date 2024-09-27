@@ -1,14 +1,15 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from bs4 import BeautifulSoup
+import requests
 
-# Erstellen von Zufallsdaten
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
+def scrape_website(url):
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, 'html.parser')
+  
+  # Beispiel: Alle Überschriften extrahieren
+  headings = soup.find_all('h2')
+  for heading in headings:
+    print(heading.text)
 
-# Erstellen eines Liniendiagramms
-plt.plot(x, y)
-plt.xlabel('x-Achse')
-plt.ylabel('y-Achse')
-plt.title('Sinuskurve')
-plt.grid(True)
-plt.show()
+# Beispiel-URL
+url = "https://www.example.com"
+scrape_website(url)
