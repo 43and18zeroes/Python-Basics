@@ -1,8 +1,7 @@
 import random
+import string
 
-def shuffle_list(items):
-    random.shuffle(items)
-    return items
+def random_string(length):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
-fruits = ['Apfel', 'Banane', 'Kirsche']
-print(shuffle_list(fruits))  # Zufällig gemischte Liste
+print(random_string(8))  # Zufällige Zeichenkette mit 8 Zeichen
