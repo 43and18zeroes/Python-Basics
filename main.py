@@ -1,6 +1,8 @@
 import random
 
-def random_float(min_value, max_value):
-    return random.uniform(min_value, max_value)
+def shuffle_list(items):
+    random.shuffle(items)
+    return items
 
-print(random_float(1.5, 10.5))  # Zufällige Fließkommazahl zwischen 1.5 und 10.5
+fruits = ['Apfel', 'Banane', 'Kirsche']
+print(shuffle_list(fruits))  # Zufällig gemischte Liste
