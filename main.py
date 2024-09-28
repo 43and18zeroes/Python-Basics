@@ -1,7 +1,7 @@
 import random
-import string
 
-def random_string(length):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+def random_passphrase(words, word_count):
+    return ' '.join(random.choices(words, k=word_count))
 
-print(random_string(8))  # Zufällige Zeichenkette mit 8 Zeichen
+word_list = ['Hund', 'Katze', 'Maus', 'Auto', 'Baum', 'Haus']
+print(random_passphrase(word_list, 4))  # Zufällige Passphrase mit 4 Wörtern
