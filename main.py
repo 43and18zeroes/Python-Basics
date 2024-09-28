@@ -1,6 +1,6 @@
 import random
 
-def random_integer(min_value, max_value):
-    return random.randint(min_value, max_value)
+def random_float(min_value, max_value):
+    return random.uniform(min_value, max_value)
 
-print(random_integer(1, 100))  # Zufällige Zahl zwischen 1 und 100
+print(random_float(1.5, 10.5))  # Zufällige Fließkommazahl zwischen 1.5 und 10.5
