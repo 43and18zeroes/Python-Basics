@@ -1,6 +1,10 @@
-import random
+from flask import Flask, render_template
 
-def random_boolean():
-    return random.choice([True, False])
+app = Flask(__name__)
 
-print(random_boolean())  # Gibt True oder False zurück
+@app.route('/')
+def index():
+  return render_template('index.html')
+
+if __name__ == '__main__':
+  app.run(debug=True)
