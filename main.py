@@ -1,8 +1,8 @@
 import numpy as np
 
-# Define a matrix
-A = np.array([[4, -2],
-              [1,  1]])
+# Define two matrices
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[2, 0], [1, 2]])
 
-# Compute eigenvalues and eigenvectors
-eigenvalues, eigenvectors = np.linalg.eig(A)
+# Perform matrix multiplication
+C = np.dot(A, B)
