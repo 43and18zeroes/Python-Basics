@@ -1,10 +1,12 @@
 import numpy as np
-from scipy.fft import fft
+from scipy.integrate import simps
 
-# Create a sample signal
-time = np.linspace(0, 1, 500)
-frequency = 5  # Hz
-signal = np.sin(2 * np.pi * frequency * time)
+# Define a function to integrate
+def f(x):
+    return np.sin(x)
 
-# Compute Fourier Transform
-fft_result = fft(signal)
+x = np.linspace(0, np.pi, 100)
+y = f(x)
+
+# Compute the integral using Simpson's rule
+result = simps(y, x)
