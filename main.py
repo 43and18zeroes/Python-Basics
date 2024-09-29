@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+import numpy as np
+from scipy.fft import fft
 
-app = Flask(__name__)
+# Create a sample signal
+time = np.linspace(0, 1, 500)
+frequency = 5  # Hz
+signal = np.sin(2 * np.pi * frequency * time)
 
-@app.route('/')
-def index():
-  return render_template('index.html')
-
-if __name__ == '__main__':
-  app.run(debug=True)
+# Compute Fourier Transform
+fft_result = fft(signal)
