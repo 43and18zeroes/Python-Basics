@@ -1,12 +1,13 @@
+from scipy.integrate import odeint
 import numpy as np
-from scipy.integrate import simps
 
-# Define a function to integrate
-def f(x):
-    return np.sin(x)
+# Define the ODE: dy/dt = -2y
+def model(y, t):
+    dydt = -2 * y
+    return dydt
 
-x = np.linspace(0, np.pi, 100)
-y = f(x)
+y0 = 1  # Initial condition
+t = np.linspace(0, 5, 100)  # Time points
 
-# Compute the integral using Simpson's rule
-result = simps(y, x)
+# Solve ODE
+y = odeint(model, y0, t)
