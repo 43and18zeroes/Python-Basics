@@ -1,13 +1,8 @@
-from scipy.integrate import odeint
 import numpy as np
 
-# Define the ODE: dy/dt = -2y
-def model(y, t):
-    dydt = -2 * y
-    return dydt
+# Define a matrix
+A = np.array([[4, -2],
+              [1,  1]])
 
-y0 = 1  # Initial condition
-t = np.linspace(0, 5, 100)  # Time points
-
-# Solve ODE
-y = odeint(model, y0, t)
+# Compute eigenvalues and eigenvectors
+eigenvalues, eigenvectors = np.linalg.eig(A)
