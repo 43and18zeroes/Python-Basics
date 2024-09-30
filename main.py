@@ -1,9 +1,9 @@
-import numpy as np
-from scipy.optimize import newton
+from functools import lru_cache
 
-# Define the function and its derivative
-def f(x):
-    return np.cos(x) - x
+@lru_cache(maxsize=1000)
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
-# Use Newton-Raphson method to find the root
-root = newton(f, x0=0.5)
+print(fibonacci(50))
