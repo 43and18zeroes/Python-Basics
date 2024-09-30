@@ -1,12 +1,4 @@
-def my_decorator(func):
-    def wrapper():
-        print("Something before the function.")
-        func()
-        print("Something after the function.")
-    return wrapper
+MyClass = type('MyClass', (object,), {'attr': 42})
 
-@my_decorator
-def say_hello():
-    print("Hello!")
-
-say_hello()
+obj = MyClass()
+print(obj.attr)
