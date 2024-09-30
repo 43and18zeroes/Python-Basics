@@ -1,11 +1,4 @@
-import concurrent.futures
-import time
+import importlib
 
-def sleep_and_return(sec):
-    time.sleep(sec)
-    return sec
-
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = [executor.submit(sleep_and_return, i) for i in range(5)]
-    for future in concurrent.futures.as_completed(futures):
-        print(future.result())
+math_module = importlib.import_module('math')
+print(math_module.sqrt(16))
