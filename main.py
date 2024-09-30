@@ -1,4 +1,7 @@
-def apply_function(func, x):
-    return func(x)
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
 
-print(apply_function(lambda x: x ** 2, 10))
+for number in countdown(5):
+    print(number)
