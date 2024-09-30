@@ -1,12 +1,9 @@
-from contextlib import contextmanager
+from dataclasses import dataclass
 
-@contextmanager
-def open_file(file, mode):
-    f = open(file, mode)
-    try:
-        yield f
-    finally:
-        f.close()
+@dataclass
+class Point:
+    x: int
+    y: int
 
-with open_file('test.txt', 'w') as f:
-    f.write('Hello, world!')
+p = Point(10, 20)
+print(p)
