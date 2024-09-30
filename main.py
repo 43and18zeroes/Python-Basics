@@ -1,18 +1,9 @@
-class MyRange:
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
+import numpy as np
+from scipy.optimize import newton
 
-    def __iter__(self):
-        self.current = self.start
-        return self
+# Define the function and its derivative
+def f(x):
+    return np.cos(x) - x
 
-    def __next__(self):
-        if self.current >= self.end:
-            raise StopIteration
-        self.current += 1
-        return self.current - 1
-
-my_range = MyRange(1, 5)
-for num in my_range:
-    print(num)
+# Use Newton-Raphson method to find the root
+root = newton(f, x0=0.5)
