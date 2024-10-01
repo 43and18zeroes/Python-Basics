@@ -1,5 +1,14 @@
-def apply_to_all(func, iterable):
-    return [func(item) for item in iterable]
+class ManagedFile:
+    def __init__(self, filename):
+        self.filename = filename
 
-numbers = [1, 2, 3, 4]
-squared = apply_to_all(lambda x: x**2, numbers)
+    def __enter__(self):
+        self.file = open(self.filename, 'r')
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+with ManagedFile('my_file.txt') as f:
+    for line in f:
+        print(line)
