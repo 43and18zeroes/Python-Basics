@@ -1,9 +1,16 @@
-from functools import lru_cache
+import functools
+import logging
 
-@lru_cache(maxsize=1000)
-def fibonacci(n):
-    if n < 2:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+def log_function_call(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        logger = logging.getLogger(__name__)
+        logger.info(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+        result = func(*args, **kwargs)
+        logger.info(f"Result: {result}")
+        return result
+    return wrapper
 
-print(fibonacci(50))
+@log_function_call
+def my_function(x, y):
+    return x + y
