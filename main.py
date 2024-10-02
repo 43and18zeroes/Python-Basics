@@ -1,8 +1,16 @@
-class Meta(type):
-    def __new__(mcs, name, bases, namespace):
-        if name == 'MyClass':
-            namespace['my_method'] = lambda self: print('Hello')
-        return super().__new__(mcs, name, bases, namespace)
+import functools
+import logging
 
-class MyClass(metaclass=Meta):
-    pass
+def log_function_call(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        logger = logging.getLogger(__name__)
+        logger.info(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+        result = func(*args, **kwargs)
+        logger.info(f"Result: {result}")
+        return result
+    return wrapper
+
+@log_function_call
+def my_function(x, y):
+    return x + y
