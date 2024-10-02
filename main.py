@@ -1,7 +1,8 @@
-def create_multiplier(factor):
-    def multiplier(x):
-        return x * factor
-    return multiplier
+class Meta(type):
+    def __new__(mcs, name, bases, namespace):
+        if name == 'MyClass':
+            namespace['my_method'] = lambda self: print('Hello')
+        return super().__new__(mcs, name, bases, namespace)
 
-double = create_multiplier(2)
-triple = create_multiplier(3)
+class MyClass(metaclass=Meta):
+    pass
