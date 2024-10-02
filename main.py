@@ -1,13 +1,7 @@
-class Person:
-    def __init__(self, age):
-        self._age = age
+def create_multiplier(factor):
+    def multiplier(x):
+        return x * factor
+    return multiplier
 
-    @property
-    def age(self):
-        return self._age
-
-    @age.setter
-    def age(self, value):
-        if value < 0:
-            raise ValueError("Age cannot be negative")
-        self._age = value
+double = create_multiplier(2)
+triple = create_multiplier(3)
