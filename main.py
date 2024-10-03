@@ -1,8 +1,11 @@
-from scipy.optimize import minimize
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Funktion minimieren
-def f(x):
-    return x**2 + 2*x + 1
+# Signal erzeugen und Fourier-Transformieren
+t = np.linspace(0, 1, 1024)
+x = np.sin(2*np.pi*50*t) + np.cos(2*np.pi*120*t)
+X = np.fft.fft(x)
 
-result = minimize(f, x0=2)
-print(result.x)
+# Plotten
+plt.plot(np.abs(X))
+plt.show()
