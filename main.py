@@ -1,13 +1,9 @@
-import sympy as sp
+from scipy import stats
 
-# Symbolische Variablen definieren
-x = sp.Symbol('x')
+# Zufallszahlen erzeugen
+data = stats.norm.rvs(size=1000, loc=5, scale=2)
 
-# Ableitung berechnen
-f = sp.sin(x)
-df = sp.diff(f, x)
-print(df)
-
-# Integral berechnen
-integral = sp.integrate(f, x)
-print(integral)
+# Mittelwert und Standardabweichung berechnen
+mean = np.mean(data)
+std = np.std(data)
+print(mean, std)
