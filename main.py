@@ -1,9 +1,8 @@
-from scipy import stats
+from scipy.optimize import minimize
 
-# Zufallszahlen erzeugen
-data = stats.norm.rvs(size=1000, loc=5, scale=2)
+# Funktion minimieren
+def f(x):
+    return x**2 + 2*x + 1
 
-# Mittelwert und Standardabweichung berechnen
-mean = np.mean(data)
-std = np.std(data)
-print(mean, std)
+result = minimize(f, x0=2)
+print(result.x)
