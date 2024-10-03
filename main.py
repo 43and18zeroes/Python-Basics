@@ -1,10 +1,14 @@
-import sympy as sp
+class ManagedFile:
+    def __init__(self, filename):
+        self.filename = filename
 
-# Gleichungssystem definieren
-x, y = sp.symbols('x y')
-eq1 = x + 2*y - 4
-eq2 = 3*x - y - 3
+    def __enter__(self):
+        self.file = open(self.filename, 'r')
+        return self.file
 
-# Gleichungssystem lösen
-sol = sp.solve([eq1, eq2], [x, y])
-print(sol)
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+with ManagedFile('my_file.txt') as f:
+    for line in f:
+        print(line)
