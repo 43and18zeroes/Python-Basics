@@ -1,14 +1,11 @@
-class ManagedFile:
-    def __init__(self, filename):
-        self.filename = filename
+import numpy as np
 
-    def __enter__(self):
-        self.file = open(self.filename, 'r')
-        return self.file
+# Matrix erstellen und invertieren
+A = np.array([[1, 2], [3, 4]])
+A_inv = np.linalg.inv(A)
+print(A_inv)
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.file.close()
-
-with ManagedFile('my_file.txt') as f:
-    for line in f:
-        print(line)
+# Eigenwerte und Eigenvektoren berechnen
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print(eigenvalues)
+print(eigenvectors)
