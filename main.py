@@ -1,11 +1,8 @@
-import numpy as np
+from scipy.integrate import solve_ivp
 
-# Matrix erstellen und invertieren
-A = np.array([[1, 2], [3, 4]])
-A_inv = np.linalg.inv(A)
-print(A_inv)
+# Einfache Differentialgleichung lösen
+def f(t, y):
+    return -y
 
-# Eigenwerte und Eigenvektoren berechnen
-eigenvalues, eigenvectors = np.linalg.eig(A)
-print(eigenvalues)
-print(eigenvectors)
+sol = solve_ivp(f, [0, 10], [1])
+print(sol.t, sol.y[0])
