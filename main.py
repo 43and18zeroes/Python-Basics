@@ -1,11 +1,14 @@
-import numpy as np
-import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
 
-# Signal erzeugen und Fourier-Transformieren
-t = np.linspace(0, 1, 1024)
-x = np.sin(2*np.pi*50*t) + np.cos(2*np.pi*120*t)
-X = np.fft.fft(x)
+# Datenpunkte erzeugen
+x = np.linspace(0, 10, 10)
+y = np.sin(x)
+
+# Interpolation durchführen
+f = interp1d(x, y)
+x_new = np.linspace(0, 10, 100)
+y_new = f(x_new)
 
 # Plotten
-plt.plot(np.abs(X))
+plt.plot(x, y, 'o', x_new, y_new, '-')
 plt.show()
