@@ -1,14 +1,10 @@
-from scipy.interpolate import interp1d
+import sympy as sp
 
-# Datenpunkte erzeugen
-x = np.linspace(0, 10, 10)
-y = np.sin(x)
+# Gleichungssystem definieren
+x, y = sp.symbols('x y')
+eq1 = x + 2*y - 4
+eq2 = 3*x - y - 3
 
-# Interpolation durchführen
-f = interp1d(x, y)
-x_new = np.linspace(0, 10, 100)
-y_new = f(x_new)
-
-# Plotten
-plt.plot(x, y, 'o', x_new, y_new, '-')
-plt.show()
+# Gleichungssystem lösen
+sol = sp.solve([eq1, eq2], [x, y])
+print(sol)
