@@ -1,11 +1,10 @@
-import requests
+import matplotlib.pyplot as plt
 
-def get_weather(city):
-    api_key = "YOUR_API_KEY"  # Ersetze durch deinen eigenen API-Schlüssel
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
-    response = requests.get(url)
-    data = response.json()
-    print(f"Das Wetter in {city} ist: {data['weather'][0]['description']}")
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 5]
 
-city = input("Gib eine Stadt ein: ")
-get_weather(city)
+plt.plot(x, y)
+plt.xlabel('X-Achse')
+plt.ylabel('Y-Achse')
+plt.title('Einfacher Plot')
+plt.show()
