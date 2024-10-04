@@ -1,11 +1,5 @@
-class Dog:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def bark(self):
-        print("Woof!")
-
-my_dog = Dog("Buddy", 3)
-print(my_dog.name)
-my_dog.bark()
+numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+numbers.sort()
+print("Sortiert:", numbers)
+unique_numbers = list(set(numbers))
+print("Einzigartig:", unique_numbers)
