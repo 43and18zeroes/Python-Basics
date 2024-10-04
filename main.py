@@ -1,8 +1,11 @@
-def word_count(filename):
-    with open(filename, 'r') as f:
-        words = f.read().split()
-    return len(words)
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-filename = 'my_text.txt'
-count = word_count(filename)
-print("Die Datei", filename, "enthält", count, "Wörter.")
+    def bark(self):
+        print("Woof!")
+
+my_dog = Dog("Buddy", 3)
+print(my_dog.name)
+my_dog.bark()
