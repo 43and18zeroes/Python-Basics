@@ -1,19 +1,8 @@
-def is_prime(num):
-    if num <= 1:
-        return False
-    if num <= 3:
-        return True
-    if num % 2 == 0 or num % 3 == 0:
-        return False
-    i = 5
-    while i * i <= num:
-        if num % i == 0 or num % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+def word_count(filename):
+    with open(filename, 'r') as f:
+        words = f.read().split()
+    return len(words)
 
-num = int(input("Gib eine Zahl ein: "))
-if is_prime(num):
-    print(num, "ist eine Primzahl.")
-else:
-    print(num, "ist keine Primzahl.")
+filename = 'my_text.txt'
+count = word_count(filename)
+print("Die Datei", filename, "enthält", count, "Wörter.")
