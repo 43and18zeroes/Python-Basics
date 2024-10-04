@@ -1,12 +1,19 @@
-def fibonacci(n):
-    """Gibt die n-te Fibonacci-Zahl zurück."""
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
-n = int(input("Gib eine Zahl ein: "))
-for i in range(n):
-    print(fibonacci(i))
+num = int(input("Gib eine Zahl ein: "))
+if is_prime(num):
+    print(num, "ist eine Primzahl.")
+else:
+    print(num, "ist keine Primzahl.")
