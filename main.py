@@ -1,14 +1,8 @@
-class ManagedFile:
-    def __init__(self, filename):
-        self.filename = filename
+from scipy.integrate import quad
 
-    def __enter__(self):
-        self.file = open(self.filename, 'r')
-        return self.file
+# Funktion integrieren
+def f(x):
+    return x**2 * np.exp(-x)
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.file.close()
-
-with ManagedFile('my_file.txt') as f:
-    for line in f:
-        print(line)
+result, error = quad(f, 0, np.inf)
+print(result)
