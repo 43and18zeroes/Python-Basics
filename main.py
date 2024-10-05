@@ -1,3 +1,3 @@
-def durchschnitt(array):
-    """Berechnet den Durchschnitt aller Elemente in einem Array."""
-    return sum(array) / len(array)
+def max_min(array):
+    """Gibt das Maximum und Minimum eines Arrays zurück."""
+    return max(array), min(array)
