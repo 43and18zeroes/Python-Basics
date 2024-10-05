@@ -1,3 +1,3 @@
-def summe(array):
-    """Berechnet die Summe aller Elemente in einem Array."""
-    return sum(array)
+def durchschnitt(array):
+    """Berechnet den Durchschnitt aller Elemente in einem Array."""
+    return sum(array) / len(array)
