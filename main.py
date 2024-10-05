@@ -1,3 +1,3 @@
-def sortieren(array):
-    """Sortiert ein Array aufsteigend."""
-    return sorted(array)
+def umkehren(array):
+    """Kehrt die Reihenfolge der Elemente in einem Array um."""
+    return array[::-1]
