@@ -1,3 +1,3 @@
-def umkehren(array):
-    """Kehrt die Reihenfolge der Elemente in einem Array um."""
-    return array[::-1]
+def transponieren(matrix):
+    """Transponiert eine Matrix (2D-Array)."""
+    return [[row[i] for row in matrix] for i in range(len(matrix[0]))]
