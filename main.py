@@ -1,5 +1,10 @@
-import pandas as pd
+from flask import Flask
 
-data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Alter': [25, 30, 28]}
-df = pd.DataFrame(data)
-print(df)
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
