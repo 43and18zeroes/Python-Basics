@@ -1,3 +1,3 @@
-def max_min(array):
-    """Gibt das Maximum und Minimum eines Arrays zurück."""
-    return max(array), min(array)
+def verdoppeln(array):
+    """Verdoppelt jedes Element in einem Array."""
+    return [x * 2 for x in array]
