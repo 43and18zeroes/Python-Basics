@@ -1,8 +1,3 @@
-def fibonacci():
-    a, b = 0, 1
-    while True:
-        yield a
-        a, b = b, a + b
-
-fib = fibonacci()
-print([next(fib) for _ in range(10)])
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Ausgabe: [1, 4, 9, 16, 25]
