@@ -1,5 +1,10 @@
-def produkt(array1, array2):
-    """Berechnet das elementweise Produkt zweier Arrays gleicher Länge."""
-    if len(array1) != len(array2):
-        raise ValueError("Arrays müssen dieselbe Länge haben")
-    return [x*y for x, y in zip(array1, array2)]
+def compose(g, f):
+    def h(x):
+        return g(f(x))
+    return h
+
+def f(x): return x * 2
+def g(x): return x + 3
+
+composed_func = compose(g, f)
+print(composed_func(5))  # Ausgabe: 13
