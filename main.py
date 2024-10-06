@@ -1,15 +1,10 @@
-def memoize(func):
-    cache = {}
-    def memoized(*args):
-        if args not in cache:
-            cache[args] = func(*args)
-        return cache[args]
-    return memoized
+class CustomContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
 
-@memoize
-def fibonacci(n):
-    if n < 2:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
 
-print(fibonacci(100))
+with CustomContextManager() as cm:
+    print("Inside the context")
