@@ -1,10 +1,16 @@
-def compose(g, f):
-    def h(x):
-        return g(f(x))
-    return h
+def timing_decorator(func):
+    import time
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end - start} seconds")
+        return result
+    return wrapper
 
-def f(x): return x * 2
-def g(x): return x + 3
+@timing_decorator
+def slow_function():
+    import time
+    time.sleep(1)
 
-composed_func = compose(g, f)
-print(composed_func(5))  # Ausgabe: 13
+slow_function()
