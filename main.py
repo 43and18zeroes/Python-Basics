@@ -1,3 +1,15 @@
-numbers = [1, 2, 3, 4, 5]
-squared = list(map(lambda x: x**2, numbers))
-print(squared)  # Ausgabe: [1, 4, 9, 16, 25]
+def memoize(func):
+    cache = {}
+    def memoized(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return memoized
+
+@memoize
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(100))
