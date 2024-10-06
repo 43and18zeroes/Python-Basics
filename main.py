@@ -1,10 +1,10 @@
-class CustomContextManager:
-    def __enter__(self):
-        print("Entering the context")
-        return self
+def apply_operations(value, operations):
+    result = value
+    for operation in operations:
+        result = operation(result)
+    return result
 
-    def __exit__(self, exc_type, exc_value, traceback):
-        print("Exiting the context")
+def double(x): return x * 2
+def add_ten(x): return x + 10
 
-with CustomContextManager() as cm:
-    print("Inside the context")
+print(apply_operations(5, [double, add_ten, double]))  # Ausgabe: 40
