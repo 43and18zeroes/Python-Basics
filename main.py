@@ -1,6 +1,8 @@
-def render_template(**template_vars):
-    # Simulierte Templating-Engine
-    template = "Hello, {name}! Your age is {age}."
-    print(template.format(**template_vars))
+def calculate(**values):
+    result = 0
+    for value in values.values():
+        result += value
+    return result
 
-render_template(name="Alice", age=25)
+result = calculate(a=10, b=20, c=30)
+print(result)
