@@ -1,5 +1,4 @@
-class MyClass:
-    def __init__(self, **config):
-        self.config = config
+def create_dict(**kwargs):
+    return kwargs
 
-obj = MyClass(color="blue", size=10, weight=5)
+my_dict = create_dict(key1="value1", key2="value2")
