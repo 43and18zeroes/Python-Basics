@@ -1,4 +1,5 @@
-def raise_custom_exception(**kwargs):
-    raise Exception(f"Custom Exception: {kwargs}")
+def configure_app(**config):
+    for key, value in config.items():
+        print(f"Setting {key} to {value}")
 
-raise_custom_exception(error_code=404, message="Not Found")
+configure_app(debug=True, host="localhost", port=5000)
