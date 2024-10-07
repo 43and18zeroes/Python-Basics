@@ -1,8 +1,5 @@
-def calculate(**values):
-    result = 0
-    for value in values.values():
-        result += value
-    return result
+class MyClass:
+    def __init__(self, **config):
+        self.config = config
 
-result = calculate(a=10, b=20, c=30)
-print(result)
+obj = MyClass(color="blue", size=10, weight=5)
