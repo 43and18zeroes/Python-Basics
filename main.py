@@ -1,6 +1,6 @@
-import pandas_datareader as web
+import talib
 
-def get_stock_data(ticker, start, end):
-  """Lädt historische Kursdaten für einen bestimmten Wertpapier."""
-  df = web.DataReader(ticker, 'yahoo', start, end)
-  return df
+def calculate_rsi(prices, period=14):
+  """Berechnet den Relative Strength Index (RSI)."""
+  rsi = talib.RSI(prices, timeperiod=period)
+  return rsi
