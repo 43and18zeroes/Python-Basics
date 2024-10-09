@@ -1,9 +1,6 @@
-def simple_interest(principal, rate, time):
-  """Berechnet einfache Zinsen."""
-  return principal * rate * time
+import pandas as pd
+import numpy as np
 
-def compound_interest(principal, rate, time, n=12):
-  """Berechnet Zinseszinsen."""
-  amount = principal * (pow((1 + rate/n), n*time))
-  CI = amount - principal
-  return CI
+def portfolio_return(returns):
+  """Berechnet die durchschnittliche Rendite eines Portfolios."""
+  return np.mean(returns)
