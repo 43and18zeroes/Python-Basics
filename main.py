@@ -1,13 +1,9 @@
-def my_decorator(**kwargs):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            # Vor der Funktionsausführung
-            result = func(*args, **kwargs)
-            # Nach der Funktionsausführung
-            return result
-        return wrapper
-    return decorator
+def simple_interest(principal, rate, time):
+  """Berechnet einfache Zinsen."""
+  return principal * rate * time
 
-@my_decorator(log=True)
-def my_function(a, b):
-    return a + b
+def compound_interest(principal, rate, time, n=12):
+  """Berechnet Zinseszinsen."""
+  amount = principal * (pow((1 + rate/n), n*time))
+  CI = amount - principal
+  return CI
