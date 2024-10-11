@@ -1,6 +1,9 @@
-import talib
+def simple_interest(principal, rate, time):
+  """Berechnet einfache Zinsen."""
+  return principal * rate * time
 
-def calculate_rsi(prices, period=14):
-  """Berechnet den Relative Strength Index (RSI)."""
-  rsi = talib.RSI(prices, timeperiod=period)
-  return rsi
+def compound_interest(principal, rate, time, n=12):
+  """Berechnet Zinseszinsen."""
+  amount = principal * (pow((1 + rate/n), n*time))
+  CI = amount - principal
+  return CI
