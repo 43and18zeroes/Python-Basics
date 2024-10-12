@@ -1,9 +1,5 @@
-def simple_interest(principal, rate, time):
-  """Berechnet einfache Zinsen."""
-  return principal * rate * time
+def log_event(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
 
-def compound_interest(principal, rate, time, n=12):
-  """Berechnet Zinseszinsen."""
-  amount = principal * (pow((1 + rate/n), n*time))
-  CI = amount - principal
-  return CI
+log_event(message="Eintritt ins System", user="admin", timestamp="2023-11-23 14:32:15")
