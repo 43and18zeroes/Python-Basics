@@ -1,5 +1,4 @@
-def configure_app(**config):
-    for key, value in config.items():
-        print(f"Setting {key} to {value}")
+def create_user(**user_data):
+    print(f"Creating user with data: {user_data}")
 
-configure_app(debug=True, host="localhost", port=5000)
+create_user(name="Max Mustermann", age=30, email="max@example.com")
