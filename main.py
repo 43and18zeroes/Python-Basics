@@ -1,3 +1,3 @@
-def quadrate(array):
-    """Berechnet die Quadratzahlen aller Elemente in einem Array."""
-    return [x**2 for x in array]
+def filter_gerade(array):
+    """Filtert alle geraden Zahlen aus einem Array."""
+    return [x for x in array if x % 2 == 0]
