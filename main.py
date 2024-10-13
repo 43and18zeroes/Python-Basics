@@ -1,4 +1,6 @@
-def create_user(**user_data):
-    print(f"Creating user with data: {user_data}")
+def render_template(**template_vars):
+    # Simulierte Templating-Engine
+    template = "Hello, {name}! Your age is {age}."
+    print(template.format(**template_vars))
 
-create_user(name="Max Mustermann", age=30, email="max@example.com")
+render_template(name="Alice", age=25)
