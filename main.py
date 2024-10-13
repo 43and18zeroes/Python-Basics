@@ -1,3 +1,3 @@
-def durchschnitt(array):
-    """Berechnet den Durchschnitt aller Elemente in einem Array."""
-    return sum(array) / len(array)
+def verdoppeln(array):
+    """Verdoppelt jedes Element in einem Array."""
+    return [x * 2 for x in array]
