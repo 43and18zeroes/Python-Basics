@@ -1,6 +1,13 @@
-import random
-import string
-länge = 10
-zeichen = string.ascii_letters + string.digits
-passwort = ''.join(random.choice(zeichen) for _ in range(länge))
-print(passwort)
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Vor dem Funktionsaufruf")
+        result = func(*args, **kwargs)
+        print("Nach dem Funktionsaufruf")
+        return result
+    return wrapper
+
+@my_decorator
+def my_function(x, y):
+    return x + y
+
+print(my_function(3, 4))
