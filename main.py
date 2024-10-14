@@ -1,5 +1,6 @@
 import random
-vornamen = ["Max", "Anna", "Tim"]
-nachnamen = ["Mustermann", "Meier", "Schmidt"]
-zufalls_name = random.choice(vornamen) + " " + random.choice(nachnamen)
-print(zufalls_name)
+import string
+länge = 10
+zeichen = string.ascii_letters + string.digits
+passwort = ''.join(random.choice(zeichen) for _ in range(länge))
+print(passwort)
