@@ -1,3 +1,5 @@
 import random
-zufallszahlen = random.sample(range(1, 50), 5)  # 5 Zufallszahlen zwischen 1 und 49
-print(zufallszahlen)
+population = ['rot', 'blau', 'grün']
+weights = [0.7, 0.2, 0.1]  # Rot wird häufiger ausgewählt
+zufalls_farbe = random.choices(population, weights=weights)[0]
+print(zufalls_farbe)
