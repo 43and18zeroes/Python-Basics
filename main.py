@@ -1,3 +1,5 @@
 import random
-lottozahlen = random.sample(range(1, 50), 6)
-print("Deine Lottozahlen sind:", lottozahlen)
+vornamen = ["Max", "Anna", "Tim"]
+nachnamen = ["Mustermann", "Meier", "Schmidt"]
+zufalls_name = random.choice(vornamen) + " " + random.choice(nachnamen)
+print(zufalls_name)
