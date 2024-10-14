@@ -1,4 +1,3 @@
 import random
-meine_liste = ['Apfel', 'Banane', 'Birne']
-zufalls_element = random.choice(meine_liste)
-print(zufalls_element)
+zufallszahlen = random.sample(range(1, 50), 5)  # 5 Zufallszahlen zwischen 1 und 49
+print(zufallszahlen)
