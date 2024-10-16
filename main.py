@@ -1,8 +1,11 @@
-def wort_zaehle(text):
-  """Zählt die Wörter in einem Text."""
-  woerter = text.split()
-  anzahl_woerter = len(woerter)
-  return anzahl_woerter
+def bubble_sort(liste):
+  """Sortiert eine Liste aufsteigend mit dem Bubble Sort-Algorithmus."""
+  n = len(liste)
+  for i in range(n):
+    for j in range(0, n-i-1):
+      if liste[j] > liste[j+1]:
+        liste[j], liste[j+1] = liste[j+1], liste[j]
+  return liste
 
-text = "Dies ist ein Beispieltext zur Wortzählung."
-print(wort_zaehle(text))
+liste = [64, 34, 25, 12, 22, 11, 90]
+print(bubble_sort(liste))
