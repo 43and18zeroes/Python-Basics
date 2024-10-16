@@ -1,7 +1,6 @@
-def ggt(a, b):
-  """Berechnet den größten gemeinsamen Teiler zweier Zahlen."""
-  while b != 0:
-    a, b = b, a % b
-  return a
+def ist_palindrom(wort):
+  """Überprüft, ob ein Wort ein Palindrom ist."""
+  wort = wort.lower()
+  return wort == wort[::-1]
 
-print(ggt(48, 18))
+print(ist_palindrom("radar"))
