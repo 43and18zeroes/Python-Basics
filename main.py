@@ -1,11 +1,7 @@
-def bubble_sort(liste):
-  """Sortiert eine Liste aufsteigend mit dem Bubble Sort-Algorithmus."""
-  n = len(liste)
-  for i in range(n):
-    for j in range(0, n-i-1):
-      if liste[j] > liste[j+1]:
-        liste[j], liste[j+1] = liste[j+1], liste[j]
-  return liste
+def ggt(a, b):
+  """Berechnet den größten gemeinsamen Teiler zweier Zahlen."""
+  while b != 0:
+    a, b = b, a % b
+  return a
 
-liste = [64, 34, 25, 12, 22, 11, 90]
-print(bubble_sort(liste))
+print(ggt(48, 18))
