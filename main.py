@@ -1,5 +1,7 @@
-class MyClass:
-    def __init__(self, **config):
-        self.config = config
+def forward_kwargs(**kwargs):
+    another_function(**kwargs)
 
-obj = MyClass(color="blue", size=10, weight=5)
+def another_function(x, y, z):
+    print(f"x={x}, y={y}, z={z}")
+
+forward_kwargs(x=1, y=2, z=3)
