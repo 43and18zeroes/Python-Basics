@@ -1,5 +1,4 @@
-def log_event(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
+def raise_custom_exception(**kwargs):
+    raise Exception(f"Custom Exception: {kwargs}")
 
-log_event(message="Eintritt ins System", user="admin", timestamp="2023-11-23 14:32:15")
+raise_custom_exception(error_code=404, message="Not Found")
