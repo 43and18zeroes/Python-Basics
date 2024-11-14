@@ -1,13 +1,16 @@
-def fakultaet(n):
-  """Berechnet die Fakultät einer nicht-negativen ganzen Zahl."""
-  if n < 0:
-    return "Die Fakultät ist für negative Zahlen nicht definiert."
-  elif n == 0:
-    return 1
-  else:
-    result = 1
-    for i in range(1, n+1):
-      result *= i
-    return result
+def ist_primzahl(zahl):
+  """Überprüft, ob eine Zahl eine Primzahl ist."""
+  if zahl <= 1:
+    return False
+  if zahl <= 3:
+    return True
+  if zahl % 2 == 0 or zahl % 3 == 0:
+    return False
+  i = 5
+  while i * i <= zahl:
+    if zahl % i == 0 or zahl % (i + 2) == 0:
+      return False
+    i += 6
+  return True
 
-print(fakultaet(5))
+print(ist_primzahl(17))
