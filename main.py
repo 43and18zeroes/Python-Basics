@@ -1,13 +1,13 @@
-def my_decorator(**kwargs):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            # Vor der Funktionsausführung
-            result = func(*args, **kwargs)
-            # Nach der Funktionsausführung
-            return result
-        return wrapper
-    return decorator
+def fakultaet(n):
+  """Berechnet die Fakultät einer nicht-negativen ganzen Zahl."""
+  if n < 0:
+    return "Die Fakultät ist für negative Zahlen nicht definiert."
+  elif n == 0:
+    return 1
+  else:
+    result = 1
+    for i in range(1, n+1):
+      result *= i
+    return result
 
-@my_decorator(log=True)
-def my_function(a, b):
-    return a + b
+print(fakultaet(5))
