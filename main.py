@@ -1,7 +1,13 @@
-def forward_kwargs(**kwargs):
-    another_function(**kwargs)
+def my_decorator(**kwargs):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            # Vor der Funktionsausführung
+            result = func(*args, **kwargs)
+            # Nach der Funktionsausführung
+            return result
+        return wrapper
+    return decorator
 
-def another_function(x, y, z):
-    print(f"x={x}, y={y}, z={z}")
-
-forward_kwargs(x=1, y=2, z=3)
+@my_decorator(log=True)
+def my_function(a, b):
+    return a + b
