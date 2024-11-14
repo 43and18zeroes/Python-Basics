@@ -1,16 +1,13 @@
-def ist_primzahl(zahl):
-  """Überprüft, ob eine Zahl eine Primzahl ist."""
-  if zahl <= 1:
-    return False
-  if zahl <= 3:
-    return True
-  if zahl % 2 == 0 or zahl % 3 == 0:
-    return False
-  i = 5
-  while i * i <= zahl:
-    if zahl % i == 0 or zahl % (i + 2) == 0:
-      return False
-    i += 6
-  return True
+def fibonacci(n):
+  """Generiert die ersten n Fibonacci-Zahlen."""
+  if n <= 0:
+    return []
+  elif n == 1:
+    return [0]
+  else:
+    fib_zahlen = [0, 1]
+    for i in range(2, n):
+      fib_zahlen.append(fib_zahlen[i-1] + fib_zahlen[i-2])
+    return fib_zahlen
 
-print(ist_primzahl(17))
+print(fibonacci(10))
